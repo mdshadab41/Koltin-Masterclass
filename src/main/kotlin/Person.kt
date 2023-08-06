@@ -24,6 +24,9 @@ class Person {
     init {
         println("This is  third block")
     }
+    init {
+        println("This is going to be last init block")
+    }
 
 
 
