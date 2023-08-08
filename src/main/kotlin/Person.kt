@@ -1,34 +1,24 @@
 class Person {
 
-    var firstName: String? = null
-    var lastName: String? = null
+    lateinit var firstName: String
+    lateinit var lastName: String
 
    constructor() {
        println("This is primary constructor")
     }
 
-    constructor(sampleParameter: Int): this(){
+    constructor(fName: String, lName: String): this(){
+        firstName = fName
+        lastName = lName
        println("This is Secondary parameter")
    }
-
-    constructor(sampleParameter: String): this(10){
-        println("This is terniary parameter")
+fun someRaandomFun() {
+    if (this::firstName.isInitialized) {
+        println("Some Random Function: ${this.firstName}")
+    } else {
+        println("first name is not iniliazed")
     }
 
-    init {
-        println("This is first init block")
-    }
-    init {
-        println("This is second init block")
-    }
-    init {
-        println("This is  third block")
-    }
-    init {
-        println("This is going to be last init block")
-    }
-
-
-
+}
 }
 

@@ -1,4 +1,5 @@
 fun main() {
-    val person = Person("Shadab")
+    val person = Person()
+    person.someRaandomFun()
 
 }
