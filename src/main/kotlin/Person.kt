@@ -1,24 +1,51 @@
 class Person {
 
-    lateinit var firstName: String
-    lateinit var lastName: String
+    var firstName: String? = null
+        set(value) {
+            println("Setter for firstName getting invoked")
+            field = value?.toUpperCase()
+        }
+        get() {
+            println("getter for firstName getting invoked")
+
+            return field
+        }
+
+
+    var lastName: String? = null
+        set(value) {
+            println("Setter for firstName getting invoked")
+            field = value
+        }
+        get() {
+            println("getter for firstName getting invoked")
+
+            return field
+        }
+    var age: Int? = null
+        set(value) {
+            if(value?.compareTo(18)!!<0){
+                throw Exception("Person is Minor")
+            }else{
+                field = value
+            }
+        }
 
    constructor() {
-       println("This is primary constructor")
     }
 
     constructor(fName: String, lName: String): this(){
         firstName = fName
         lastName = lName
-       println("This is Secondary parameter")
+
    }
 fun someRaandomFun() {
-    if (this::firstName.isInitialized) {
+
         println("Some Random Function: ${this.firstName}")
-    } else {
-        println("first name is not iniliazed")
+
+
     }
 
 }
-}
+
 
