@@ -50,6 +50,9 @@ fun displayPerson(): String{
         println("${param1} ${param2}")
     }
 
+    //Expression Function
+    fun isMinor():Boolean = this.age?.compareTo(18)!!<0
+
 }
 
 
