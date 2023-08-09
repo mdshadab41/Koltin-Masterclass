@@ -4,7 +4,9 @@ fun main() {
     person.lastName = "Rayeen"
     person.age = 19
 
-    println("${person.firstName} ${person.lastName} ${person.age}")
+    println(person.displayPerson(param = "p"))
+
+    person.demoFunction("Shadab", "R")
 
 
 
