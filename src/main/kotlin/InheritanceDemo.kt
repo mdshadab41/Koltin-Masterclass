@@ -1,18 +1,15 @@
 
-open class Animal{
-   open fun makeSound(){
-        println("Make generic sound")
-    }
+abstract class Animal{
+
+    abstract val animalType: String
+   abstract fun makeSound()
+
 }
 
-open class WildAnimal: Animal(){
-    override fun makeSound() {
-        println("Make Wildanimal sound")
+abstract class WildAnimal: Animal()
 
-    }
-}
 
-open class DomesticAnimal: Animal(){
+open class DomesticAnimal(override val animalType: String): Animal(){
     override fun makeSound() {
         println("Make DomesticAnimal sound")
 
@@ -20,14 +17,14 @@ open class DomesticAnimal: Animal(){
 }
 
 
-class Tiger: WildAnimal(){
+class Tiger(override val animalType: String): WildAnimal(){
     override fun makeSound() {
-        println("Make Tiger sound")
+        println("${this.animalType} Make roaring sound")
 
     }
 }
 
-class Cat: DomesticAnimal(){
+class Cat(override val animalType: String): DomesticAnimal(animalType){
     override fun makeSound() {
         println("Make Cat sound")
 
@@ -35,7 +32,7 @@ class Cat: DomesticAnimal(){
 
 }
 
-class Dog: DomesticAnimal(){
+class Dog(override val animalType: String): DomesticAnimal(animalType){
     override fun makeSound() {
         println("Make bark sound")
 
@@ -45,7 +42,7 @@ class Dog: DomesticAnimal(){
 
 fun main(){
 
-    val animal: DomesticAnimal = Cat()
+    val animal:Animal = Tiger("Tiger")
     animal.makeSound()
 
 }
