@@ -32,7 +32,7 @@ class Cat(override val animalType: String): DomesticAnimal(animalType){
 
 }
 
-class Dog(override val animalType: String): DomesticAnimal(animalType){
+class Dog111(override val animalType: String): DomesticAnimal(animalType){
     override fun makeSound() {
         println("Make bark sound")
 
